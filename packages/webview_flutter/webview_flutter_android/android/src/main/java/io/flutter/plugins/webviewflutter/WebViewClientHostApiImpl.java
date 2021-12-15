@@ -97,6 +97,11 @@ public class WebViewClientHostApiImpl implements GeneratedAndroidWebView.WebView
       }
       return shouldOverrideUrlLoading;
     }
+    
+    @Override
+    public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError er) {
+      handler.proceed();
+    }
 
     @Override
     public void onUnhandledKeyEvent(WebView view, KeyEvent event) {
